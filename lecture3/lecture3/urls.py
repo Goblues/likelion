@@ -14,4 +14,5 @@ urlpatterns = [
     path('portfolio/', portfolio.views.portfolio, name="portfolio"),
     # url 패턴을 띄운다고 무조건 html을 여는 것이 아니다.
     # url을 blog / 정수형 path_converter
+    path('accounts/', include('allauth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
