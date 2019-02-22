@@ -1,0 +1,16 @@
+{% extends 'base.html' %} {% block contents %}
+<br />
+<div class="container">
+  <form method="POST">
+    <!-- POST 방식 보안기능 -->
+    {% csrf_token %}
+    <table>
+      <!-- 템플릿 변수로 찍어 보내준다. -->
+      <!-- .as_p 라고 하면 p태그로 입력공간이 보여진다. as_table은 표 형태로 보여진다.-->
+      {{form.as_table}}
+    </table>
+    <br>
+    <input class="btn btn-dark" type="submit" value="제출하기">
+  </form>
+</div>
+{% endblock %}
